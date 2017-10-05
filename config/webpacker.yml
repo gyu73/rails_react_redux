@@ -6,13 +6,6 @@ default: &default
   public_output_path: packs
   cache_path: tmp/cache/webpacker
 
-  # Additional paths webpack should lookup modules
-  # ['app/assets', 'engine/foo/app/assets']
-  resolved_paths: []
-
-  # Reload manifest.json on all requests so we reload latest compiled packs
-  cache_manifest: false
-
   extensions:
     - .coffee
     - .erb
@@ -31,12 +24,10 @@ default: &default
 
 development:
   <<: *default
-  compile: true
 
   dev_server:
     host: localhost
     port: 8080
-    hmr: false
     https: false
 
 test:
